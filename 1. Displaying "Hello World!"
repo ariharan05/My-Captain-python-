@@ -1,0 +1,3 @@
+# Displaying hello World 
+# using print function
+print('Hello World!')
