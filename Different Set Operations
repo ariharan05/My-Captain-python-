@@ -1,0 +1,27 @@
+#union:
+
+list={1,2,3,4,5}
+list2={4,5,6}
+list3=list.union(list2)
+print("Union of the list:",list3)
+
+#Intersection:
+
+list={1,2,3,4,5}
+list2={4,5,6}
+list3=list.intersection(list2)
+print("Intersection of the list:",list3)
+
+#difference:
+
+list={1,2,3,4,5}
+list2={4,5,6}
+list3=list.difference(list2)
+print("difference of the list:",list3)
+
+#symentric_difference:
+
+list={1,2,3,4,5}
+list2={4,5,6}
+list3=list.symmetric_difference(list2)
+print("symentric_difference of the list:",list3)
