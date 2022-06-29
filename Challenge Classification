@@ -1,0 +1,62 @@
+#IMPORTING
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.preprocessing import StandardScaler
+%matplotlib inline
+
+#Reading file
+
+X=pd.read_csv('/content/sample_data/dataclassification.csv')
+
+X.head()
+
+#Closeviewing Data
+
+y= X.iloc[7,1:].values
+
+#Reshaping Extracted Data
+
+y=y.reshape(28,28).astype('uint8')
+plt.imshow(j)
+
+#Y Label
+
+y=X['6']
+
+#X Label
+
+x=X.drop('6' ,axis=1)
+
+#TRAIN TEST SPLIT
+
+x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.2,random_state=1)
+y_train.head()
+
+#RANDOM FOREST CLASSIFIER
+
+rfc = RandomForestClassifier(n_estimators=100)
+
+
+rfc.fit(x_train,y_train)
+
+#PREDICTING
+
+y_pred=rfc.predict(x_test)
+y_pred.shape
+
+#ACCURACY
+
+from sklearn.metrics import accuracy_score
+accuracy_score(y_test,y_pred)
+
+#FUTURE PREDICTION
+
+X_new=X.sample()
+X_new
+X_new_x=X_new.drop('6',axis=1)
+X_new_y_pred=rfc.predict(X_new_x)
+X_new_y_pred
